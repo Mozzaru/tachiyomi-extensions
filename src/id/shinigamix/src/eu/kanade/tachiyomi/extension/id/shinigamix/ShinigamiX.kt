@@ -39,7 +39,7 @@ class ShinigamiX : ConfigurableSource, HttpSource() {
 
     override val baseUrl by lazy { getPrefBaseUrl() }
 
-    private var defaultBaseUrl = "https://shinigami03.com"
+    private var defaultBaseUrl = "https://shinigami08.com"
 
     private val apiUrl = "https://api.shinigami.ae"
 
@@ -55,7 +55,7 @@ class ShinigamiX : ConfigurableSource, HttpSource() {
         Injekt.get<Application>().getSharedPreferences("source_$id", 0x0000)
     }
 
-    override val client: OkHttpClient = network.cloudflareClient.newBuilder()
+    override val client: OkHttpClient = super.client.newBuilder()
         .addInterceptor { chain ->
             val request = chain.request()
             val headers = request.headers.newBuilder().apply {
