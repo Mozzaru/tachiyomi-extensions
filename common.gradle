@@ -53,13 +53,13 @@ android {
 
     signingConfigs {
         release {
-            storeFile rootProject.file("signingkey.jks")
+            storeFile rootProject.file("keystore/key.jks")
             storePassword System.getenv("KEY_STORE_PASSWORD")
             keyAlias System.getenv("ALIAS")
             keyPassword System.getenv("KEY_PASSWORD")
         }
     }
-
+    
     buildTypes {
         release {
             signingConfig signingConfigs.release
@@ -67,7 +67,7 @@ android {
             vcsInfo.include false
         }
     }
-
+    
     dependenciesInfo {
         includeInApk = false
     }
