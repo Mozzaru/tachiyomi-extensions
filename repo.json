@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "Riztard Extensions Repo",
-    "shortName": "Riztard",
-    "website": "https://github.com/Riztard/tachiyomi-extensions",
-    "signingKeyFingerprint": "f91d848e10fdb467a06469d3df3a671c4d4db27b278874d9de0f67d5ac5cc01b"
+    "name": "Mozzaru Extensions Repo",
+    "shortName": "mozzaru",
+    "website": "https//github.com/mozzaru/tachiyomi-extensions",
+    "signingKeyFingerprint": "841AADF910B41579E10140A4F15A05017B462462016BE8BB293FB43C7F1DECE3"
   }
 }
