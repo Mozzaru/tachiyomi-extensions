@@ -39,7 +39,7 @@ class ShinigamiX : ConfigurableSource, HttpSource() {
 
     override val baseUrl by lazy { getPrefBaseUrl() }
 
-    private var defaultBaseUrl = "https://shinigami03.com"
+    private var defaultBaseUrl = "https://shinigami09.com"
 
     private val apiUrl = "https://api.shinigami.ae"
 
@@ -238,7 +238,7 @@ class ShinigamiX : ConfigurableSource, HttpSource() {
     override fun imageRequest(page: Page): Request {
         val newHeaders = headersBuilder()
             .add("Accept", "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8")
-            .set("Referer", page.url)
+            .add("Referer", "$baseUrl/")
             .build()
 
         return GET(page.imageUrl!!, newHeaders)
@@ -298,10 +298,10 @@ class ShinigamiX : ConfigurableSource, HttpSource() {
             SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH)
         }
 
-        private const val RESTART_APP = "Untuk menerapkan perubahan, restart aplikasi."
+        private const val RESTART_APP = "Restart aplikasi untuk menerapkan perubahan."
         private const val BASE_URL_PREF_TITLE = "Ubah Domain"
         private const val BASE_URL_PREF = "overrideBaseUrl"
-        private const val BASE_URL_PREF_SUMMARY = "Untuk penggunaan sementara. Memperbarui ekstensi akan menghapus pengaturan. \n\n❗ Gunakan hanya pada saat manga yang sudah ditambahkan di library bermasalah, sedangkan normal untuk yang tidak. ❗"
+        private const val BASE_URL_PREF_SUMMARY = "Untuk penggunaan sementara. Memperbarui ekstensi akan menghapus pengaturan. \n\n❗ Restart aplikasi untuk menerapkan perubahan. ❗"
         private const val DEFAULT_BASE_URL_PREF = "defaultBaseUrl"
     }
 }
